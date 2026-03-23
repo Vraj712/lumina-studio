@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina | Premium Photography Studio</title>
+    <title>Premium Photography Studio</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -16,199 +18,247 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Poppins"', 'sans-serif'],
                     },
                     colors: {
-                        dark: '#0f0f0f',
-                        light: '#fdfdfd',
-                        gold: '#d4af37'
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#0F172A',
+                            light: '#F8FAFC'
+                        }
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-light text-gray-900 dark:bg-dark dark:text-gray-100 transition-colors duration-300 font-sans md:cursor-none overflow-hidden">
+<body class="bg-brand-light text-gray-800 dark:bg-brand-dark dark:text-gray-200 transition-colors duration-300 font-sans antialiased overflow-hidden">
 
-    <div id="preloader" class="fixed inset-0 z-[999999] bg-dark flex flex-col items-center justify-center transition-opacity duration-1000">
-        <h1 class="font-serif text-4xl md:text-6xl text-white tracking-[0.3em] uppercase loader-text opacity-0">Lumina.</h1>
+    <div id="preloader" class="fixed inset-0 z-[999999] bg-brand-dark flex flex-col items-center justify-center transition-opacity duration-1000">
+        <h1 class="font-serif text-4xl md:text-5xl text-white tracking-[0.3em] uppercase loader-text opacity-0 translate-y-4 transition-all duration-1000 ease-out">Lens&Light</h1>
         <div class="w-48 h-[1px] bg-gray-800 mt-8 relative overflow-hidden">
-            <div class="absolute top-0 left-0 h-full bg-gold loader-bar w-0"></div>
+            <div class="absolute top-0 left-0 h-full bg-brand-gold loader-bar w-0 transition-all duration-[1.5s] ease-in-out"></div>
         </div>
     </div>
 
-    <div class="custom-cursor hidden md:block"></div>
-
-    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/80 dark:bg-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24 relative">
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#about" class="hover:text-gold transition-colors text-xs uppercase tracking-[0.2em] md:cursor-none">About</a>
-                    <a href="#portfolio" class="hover:text-gold transition-colors text-xs uppercase tracking-[0.2em] md:cursor-none">Portfolio</a>
+                
+                <div class="w-1/3 flex justify-start md:justify-end md:pr-12">
+                    <div class="hidden md:flex space-x-10 items-center">
+                        <a href="#about" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest">About</a>
+                        <a href="#portfolio" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest">Portfolio</a>
+                    </div>
                 </div>
-                <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
-                    <a href="#" class="font-serif text-3xl md:text-4xl font-bold tracking-widest text-gray-900 dark:text-white md:cursor-none">LUMINA.</a>
+
+                <div class="w-1/3 flex justify-center z-10">
+                    <a href="#" class="font-serif text-3xl md:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white">Lens&Light</a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#services" class="hover:text-gold transition-colors text-xs uppercase tracking-[0.2em] md:cursor-none">Services</a>
-                    <button id="theme-toggle" class="text-lg hover:text-gold transition-colors md:cursor-none">🌓</button>
-                    <a href="#contact" class="px-6 py-3 bg-gray-900 text-white dark:bg-white dark:text-dark hover:bg-gold dark:hover:bg-gold hover:text-white transition-all duration-300 uppercase text-xs tracking-[0.2em] whitespace-nowrap md:cursor-none">Book Now</a>
+
+                <div class="w-1/3 flex justify-end md:pl-12 items-center">
+                    <div class="hidden md:flex space-x-8 items-center">
+                        <button id="theme-toggle" class="text-lg hover:text-brand-gold transition-colors">
+                            <i class="fa-solid fa-moon dark:hidden"></i>
+                            <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                        </button>
+                        <a href="#booking" class="px-6 py-3 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap">Book Now</a>
+                    </div>
+                    <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
-                <div class="md:hidden flex flex-1 justify-end">
-                    <button class="text-2xl">☰</button>
-                </div>
+
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-brand-dark border-t border-gray-200 dark:border-gray-800 absolute w-full">
+            <div class="px-4 pt-4 pb-6 space-y-6 flex flex-col text-center">
+                <a href="#about" class="block text-sm tracking-widest uppercase font-medium">About</a>
+                <a href="#portfolio" class="block text-sm tracking-widest uppercase font-medium">Portfolio</a>
+                <a href="#booking" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">Book Now</a>
+                <button id="mobile-theme-toggle" class="text-sm tracking-widest uppercase font-medium">Toggle Theme</button>
             </div>
         </div>
     </nav>
-
-    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden md:cursor-none">
+    
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1516224583488-26190471b696?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Hero Background" class="w-full h-full object-cover hero-img scale-110" />
-            <div class="absolute inset-0 bg-black/50"></div>
+            <img src="https://images.unsplash.com/photo-1516224583488-26190471b696?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Hero Background" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
         </div>
-        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto gs-reveal">
-            <h4 class="text-gold tracking-[0.3em] uppercase text-xs mb-6">Est. 2012</h4>
-            <h1 class="font-serif text-6xl md:text-8xl font-bold mb-6 leading-none">Visual <span class="italic font-light">Poetry</span></h1>
-            <p class="text-lg md:text-xl font-light mb-10 tracking-widest opacity-80 uppercase text-sm">Editorial • Wedding • Lifestyle</p>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+            <p class="text-brand-gold tracking-[0.3em] uppercase text-sm mb-4 font-medium">Capturing Timeless Moments</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 leading-tight">Visual Poetry.</h1>
+            <p class="text-gray-300 font-light text-lg md:text-xl mb-10 max-w-2xl mx-auto">Luxury wedding, editorial, and portrait photography based in New York. We craft stories through light, shadow, and raw emotion.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#portfolio" class="px-8 py-4 bg-brand-gold text-brand-dark font-medium uppercase tracking-widest hover:bg-white transition-colors duration-300">View Portfolio</a>
+                <a href="#booking" class="px-8 py-4 border border-white text-white font-medium uppercase tracking-widest hover:bg-white hover:text-brand-dark transition-colors duration-300">Book Session</a>
+            </div>
         </div>
-    </section>
+    </header>
 
-    <div class="bg-gold text-dark py-4 overflow-hidden flex whitespace-nowrap border-y border-white/20 md:cursor-none w-full">
-        <div class="marquee-track font-semibold text-sm tracking-[0.3em] uppercase flex flex-nowrap items-center">
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
-        </div>
-    </div>
-
-    <section id="about" class="py-32 bg-light dark:bg-dark md:cursor-none">
+    <section id="about" class="py-24 bg-brand-light dark:bg-brand-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="gs-reveal relative overflow-hidden h-[700px] group">
-                    <div class="absolute -inset-4 border border-gold/30 translate-x-4 translate-y-4 hidden md:block z-20 pointer-events-none transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
-                    <img src="https://images.unsplash.com/photo-1554046920-90dcac824b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Photographer" class="relative z-10 w-full h-[120%] object-cover parallax-img -top-[10%]">
+                <div class="relative" data-aos="fade-right">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-brand-gold/20 to-transparent backdrop-blur-sm -z-10 rounded-lg transform translate-x-4 translate-y-4"></div>
+                    <img src="https://images.unsplash.com/photo-1554046920-90dcac824b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Photographer" class="w-full h-[600px] object-cover shadow-2xl rounded-sm" loading="lazy">
                 </div>
-                <div class="gs-reveal">
-                    <h2 class="font-serif text-5xl md:text-6xl font-bold mb-8">Light, Shadows, & <br>Raw Emotion.</h2>
-                    <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-lg">We focus on the unspoken narrative. Every frame is meticulously crafted to tell your story with cinematic elegance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-32 bg-white dark:bg-[#0a0a0a] border-y border-gray-100 dark:border-gray-900 md:cursor-none">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gs-reveal">
-            <h4 class="text-gold tracking-[0.2em] uppercase text-xs mb-4 text-center">Our Expertise</h4>
-            <h2 class="font-serif text-5xl font-bold text-center mb-16">Services</h2>
-            <div class="flex flex-col space-y-8">
-                <div class="group border-b border-gray-200 dark:border-gray-800 pb-8 flex justify-between items-center hover:px-6 transition-all duration-500 cursor-none">
-                    <h3 class="font-serif text-3xl md:text-4xl text-gray-400 group-hover:text-gold transition-colors">01. Editorial & Fashion</h3>
-                    <span class="text-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">View Work</span>
-                </div>
-                <div class="group border-b border-gray-200 dark:border-gray-800 pb-8 flex justify-between items-center hover:px-6 transition-all duration-500 cursor-none">
-                    <h3 class="font-serif text-3xl md:text-4xl text-gray-400 group-hover:text-gold transition-colors">02. Luxury Weddings</h3>
-                    <span class="text-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">View Work</span>
-                </div>
-                <div class="group border-b border-gray-200 dark:border-gray-800 pb-8 flex justify-between items-center hover:px-6 transition-all duration-500 cursor-none">
-                    <h3 class="font-serif text-3xl md:text-4xl text-gray-400 group-hover:text-gold transition-colors">03. Portraiture</h3>
-                    <span class="text-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">View Work</span>
+                <div data-aos="fade-left">
+                    <h4 class="text-brand-gold tracking-widest uppercase text-sm mb-2">The Artist</h4>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Hello, I'm Elena.</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed font-light">With over 10 years of experience, my approach is rooted in fine art and editorial storytelling. I believe every frame should evoke a feeling, a memory, a fleeting moment frozen in time forever.</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed font-light">Whether it's the chaotic joy of a wedding day or the quiet intimacy of a portrait session, I am there to document your truth.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Stylized_signature_sample.svg" alt="Signature" class="h-12 dark:invert opacity-70">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-32 bg-gray-50 dark:bg-[#111] md:cursor-none">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20 gs-reveal">
-            <h2 class="font-serif text-5xl md:text-6xl font-bold">Selected Works</h2>
-        </div>
+    <section id="portfolio" class="py-24 bg-white dark:bg-[#0B1120]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="portfolio-grid" class="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
-                <div class="relative overflow-hidden group portfolio-item lightbox-trigger md:cursor-none break-inside-avoid">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center text-white text-sm uppercase tracking-widest">Enlarge</div>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Selected Works</h2>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-8" id="portfolio-filters">
+                    <button class="filter-btn active px-4 py-1 border-b-2 border-brand-gold text-sm uppercase tracking-wider" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-1 border-b-2 border-transparent hover:border-brand-gold text-sm uppercase tracking-wider text-gray-500" data-filter="wedding">Wedding</button>
+                    <button class="filter-btn px-4 py-1 border-b-2 border-transparent hover:border-brand-gold text-sm uppercase tracking-wider text-gray-500" data-filter="portrait">Portrait</button>
+                    <button class="filter-btn px-4 py-1 border-b-2 border-transparent hover:border-brand-gold text-sm uppercase tracking-wider text-gray-500" data-filter="editorial">Editorial</button>
                 </div>
-                <div class="relative overflow-hidden group portfolio-item lightbox-trigger md:cursor-none break-inside-avoid">
-                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center text-white text-sm uppercase tracking-widest">Enlarge</div>
+            </div>
+
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6" id="gallery-grid">
+                
+                <div class="gallery-item relative overflow-hidden group cursor-pointer break-inside-avoid rounded-sm shadow-md" data-category="wedding" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding" loading="lazy" class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-expand text-white text-3xl"></i>
+                    </div>
                 </div>
-                <div class="relative overflow-hidden group portfolio-item lightbox-trigger md:cursor-none break-inside-avoid">
-                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center text-white text-sm uppercase tracking-widest">Enlarge</div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer break-inside-avoid rounded-sm shadow-md" data-category="editorial" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Editorial" loading="lazy" class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-expand text-white text-3xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden group cursor-pointer break-inside-avoid rounded-sm shadow-md" data-category="portrait" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portrait" loading="lazy" class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-expand text-white text-3xl"></i>
+                    </div>
+                </div>
+                 </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-light dark:bg-brand-dark overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
+            <h4 class="text-brand-gold tracking-widest uppercase text-sm mb-2">The Editing Process</h4>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mb-12 text-gray-900 dark:text-white">Before & After</h2>
+            
+            <div class="relative w-full aspect-[3/2] rounded-lg overflow-hidden select-none" id="ba-slider">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="After" class="absolute inset-0 w-full h-full object-cover pointer-events-none filter contrast-125 brightness-110" loading="lazy">
+                
+                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-4 border-white shadow-[5px_0_15px_rgba(0,0,0,0.5)]" id="ba-before">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Before" class="absolute top-0 left-0 w-[100vw] max-w-[896px] h-full object-cover pointer-events-none filter grayscale opacity-80" loading="lazy">
+                </div>
+
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg cursor-ew-resize z-10" id="ba-handle">
+                    <i class="fa-solid fa-arrows-left-right text-brand-dark"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-32 bg-light dark:bg-dark md:cursor-none">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 gs-reveal">
-            <div class="text-center mb-16">
-                <h4 class="text-gold tracking-[0.2em] uppercase text-xs mb-4">Reserve Your Date</h4>
-                <h2 class="font-serif text-5xl font-bold">Book a Session</h2>
+    <section id="booking" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">Book a Session</h2>
+                <p class="text-gray-400 font-light">Let's create something beautiful together. Fill out the form below to check availability.</p>
             </div>
-            
-            <form class="space-y-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <input type="text" placeholder="Your Name" class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors md:cursor-none">
-                    <input type="email" placeholder="Email Address" class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors md:cursor-none">
+
+            <form action="https://formspree.io/f/maqpgpqw" method="POST" class="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-lg border border-white/20 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Full Name</label>
+                        <input type="text" name="Full Name" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white placeholder-gray-500" placeholder="Jane Doe" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Email Address</label>
+                        <input type="email" name="Email" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white placeholder-gray-500" placeholder="jane@example.com" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Phone Number</label>
+                        <input type="tel" name="Phone" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white placeholder-gray-500" placeholder="+1 (555) 000-0000">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Event Type</label>
+                        <select name="Event Type" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white appearance-none cursor-pointer">
+                            <option value="wedding" class="bg-brand-dark text-white">Wedding</option>
+                            <option value="portrait" class="bg-brand-dark text-white">Portrait Session</option>
+                            <option value="editorial" class="bg-brand-dark text-white">Editorial / Commercial</option>
+                            <option value="other" class="bg-brand-dark text-white">Other Event</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Preferred Date</label>
+                        <input type="date" name="Date" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white [color-scheme:dark]">
+                    </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <select class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors text-gray-500 appearance-none md:cursor-none">
-                        <option value="">Select Service</option>
-                        <option value="wedding">Wedding Coverage</option>
-                        <option value="editorial">Editorial / Fashion</option>
-                        <option value="portrait">Portrait Session</option>
-                    </select>
-                    <input type="date" class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors text-gray-500 md:cursor-none">
-                </div>
-                <textarea placeholder="Tell us about your vision..." rows="4" class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors md:cursor-none"></textarea>
-                
-                <div class="text-center pt-8">
-                    <button type="submit" class="px-12 py-4 bg-gray-900 text-white dark:bg-white dark:text-dark hover:bg-gold dark:hover:bg-gold hover:text-white transition-all duration-300 uppercase text-sm tracking-[0.2em] md:cursor-none">Send Inquiry</button>
-                </div>
+                <button type="submit" class="w-full py-4 bg-brand-gold text-brand-dark font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 mt-6">Send Request</button>
             </form>
         </div>
     </section>
 
-    <footer class="bg-gray-50 dark:bg-[#0a0a0a] py-16 text-center md:cursor-none">
-        <h2 class="font-serif text-3xl font-bold tracking-widest mb-6">LUMINA.</h2>
-        <div class="flex justify-center space-x-8 mb-8">
-            <a href="#" class="text-xs uppercase tracking-[0.2em] text-gray-500 hover:text-gold transition md:cursor-none">Instagram</a>
-            <a href="#" class="text-xs uppercase tracking-[0.2em] text-gray-500 hover:text-gold transition md:cursor-none">Vogue</a>
-            <a href="#" class="text-xs uppercase tracking-[0.2em] text-gray-500 hover:text-gold transition md:cursor-none">Pinterest</a>
+    <section class="py-24 bg-brand-light dark:bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="font-serif text-4xl font-bold mb-6 text-gray-900 dark:text-white">Get in Touch</h2>
+                <p class="text-gray-600 dark:text-gray-400 font-light mb-8">Located in the heart of Manhattan. Available for travel worldwide.</p>
+                
+                <div class="space-y-4 mb-8">
+                    <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-location-dot w-8 text-brand-gold"></i> 123 Gallery Row, New York, NY 10012</p>
+                    <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-envelope w-8 text-brand-gold"></i> hello@lensandlight.com</p>
+                </div>
+
+                <a href="https://wa.me/1234567890" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#25D366] text-white font-medium rounded-sm hover:bg-[#1DA851] transition-colors shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Chat on WhatsApp
+                </a>
+            </div>
+            
+            <div class="h-96 rounded-lg overflow-hidden shadow-xl filter grayscale hover:grayscale-0 transition-all duration-500" data-aos="fade-left">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.518174526978!2d-74.00282478459458!3d40.72859187932971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598f828a1c93%3A0xc3b5168e7b3ebec0!2sSoHo%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1689280000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
-        <p class="text-xs text-gray-400 tracking-widest">© 2026 LUMINA STUDIO.</p>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">Lens&Light</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm font-light">&copy; 2023 Lens&Light Studio. All rights reserved.</p>
+        </div>
     </footer>
 
-    <div id="admin-panel" class="hidden fixed bottom-8 left-8 z-[90] md:cursor-none">
-        <label for="admin-upload" class="px-6 py-3 bg-gold text-dark font-bold text-xs uppercase tracking-[0.2em] shadow-lg hover:bg-white transition-colors cursor-pointer md:cursor-none">
-            + Upload Image (Test)
-        </label>
-        <input type="file" id="admin-upload" accept="image/png, image/jpeg, image/webp" class="hidden" multiple>
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex justify-center items-center opacity-0 transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-8 text-white text-4xl hover:text-brand-gold transition-colors">&times;</button>
+        <img id="lightbox-img" src="" alt="Fullscreen Image" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl">
     </div>
 
-    <div id="lightbox" class="fixed inset-0 z-[999999] bg-[#050505] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 md:cursor-none overflow-hidden">
-        <div class="absolute top-8 right-8 z-50 flex space-x-6">
-            <button id="zoom-out" class="text-white text-4xl hover:text-gold transition-colors md:cursor-none" title="Zoom Out">−</button>
-            <button id="zoom-in" class="text-white text-4xl hover:text-gold transition-colors md:cursor-none" title="Zoom In">+</button>
-            <button id="lightbox-close" class="text-white text-5xl hover:text-gold transition-colors md:cursor-none ml-4">&times;</button>
-        </div>
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 text-xs tracking-widest uppercase z-50 pointer-events-none">
-            Scroll to Zoom • Drag to Pan
-        </div>
-        <div id="lightbox-img-container" class="w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing">
-            <img id="lightbox-img" src="" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl transition-transform duration-200 ease-out origin-center" style="image-rendering: high-quality;">
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
