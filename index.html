@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina | Premium Photography Studio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        dark: '#0f0f0f',
+                        light: '#fdfdfd',
+                        gold: '#d4af37'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light text-gray-900 dark:bg-dark dark:text-gray-100 transition-colors duration-300 font-sans md:cursor-none overflow-hidden">
+
+    <div id="preloader" class="fixed inset-0 z-[999999] bg-dark flex flex-col items-center justify-center transition-opacity duration-1000">
+        <h1 class="font-serif text-4xl md:text-6xl text-white tracking-[0.3em] uppercase loader-text opacity-0">Lumina.</h1>
+        <div class="w-48 h-[1px] bg-gray-800 mt-8 relative overflow-hidden">
+            <div class="absolute top-0 left-0 h-full bg-gold loader-bar w-0"></div>
+        </div>
+    </div>
+
+    <div class="custom-cursor hidden md:block"></div>
+
+    <nav id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/80 dark:bg-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24 relative">
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="hover:text-gold transition-colors text-xs uppercase tracking-[0.2em] md:cursor-none">About</a>
+                    <a href="#portfolio" class="hover:text-gold transition-colors text-xs uppercase tracking-[0.2em] md:cursor-none">Portfolio</a>
+                </div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+                    <a href="#" class="font-serif text-3xl md:text-4xl font-bold tracking-widest text-gray-900 dark:text-white md:cursor-none">LUMINA.</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="hover:text-gold transition-colors text-xs uppercase tracking-[0.2em] md:cursor-none">Services</a>
+                    <button id="theme-toggle" class="text-lg hover:text-gold transition-colors md:cursor-none">🌓</button>
+                    <a href="#contact" class="px-6 py-3 bg-gray-900 text-white dark:bg-white dark:text-dark hover:bg-gold dark:hover:bg-gold hover:text-white transition-all duration-300 uppercase text-xs tracking-[0.2em] whitespace-nowrap md:cursor-none">Book Now</a>
+                </div>
+                <div class="md:hidden flex flex-1 justify-end">
+                    <button class="text-2xl">☰</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden md:cursor-none">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1516224583488-26190471b696?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Hero Background" class="w-full h-full object-cover hero-img scale-110" />
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto gs-reveal">
+            <h4 class="text-gold tracking-[0.3em] uppercase text-xs mb-6">Est. 2012</h4>
+            <h1 class="font-serif text-6xl md:text-8xl font-bold mb-6 leading-none">Visual <span class="italic font-light">Poetry</span></h1>
+            <p class="text-lg md:text-xl font-light mb-10 tracking-widest opacity-80 uppercase text-sm">Editorial • Wedding • Lifestyle</p>
+        </div>
+    </section>
+
+    <div class="bg-gold text-dark py-4 overflow-hidden flex whitespace-nowrap border-y border-white/20 md:cursor-none w-full">
+        <div class="marquee-track font-semibold text-sm tracking-[0.3em] uppercase flex flex-nowrap items-center">
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+        </div>
+    </div>
+
+    <section id="about" class="py-32 bg-light dark:bg-dark md:cursor-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="gs-reveal relative overflow-hidden h-[700px] group">
+                    <div class="absolute -inset-4 border border-gold/30 translate-x-4 translate-y-4 hidden md:block z-20 pointer-events-none transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                    <img src="https://images.unsplash.com/photo-1554046920-90dcac824b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Photographer" class="relative z-10 w-full h-[120%] object-cover parallax-img -top-[10%]">
+                </div>
+                <div class="gs-reveal">
+                    <h2 class="font-serif text-5xl md:text-6xl font-bold mb-8">Light, Shadows, & <br>Raw Emotion.</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-lg">We focus on the unspoken narrative. Every frame is meticulously crafted to tell your story with cinematic elegance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-32 bg-white dark:bg-[#0a0a0a] border-y border-gray-100 dark:border-gray-900 md:cursor-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gs-reveal">
+            <h4 class="text-gold tracking-[0.2em] uppercase text-xs mb-4 text-center">Our Expertise</h4>
+            <h2 class="font-serif text-5xl font-bold text-center mb-16">Services</h2>
+            <div class="flex flex-col space-y-8">
+                <div class="group border-b border-gray-200 dark:border-gray-800 pb-8 flex justify-between items-center hover:px-6 transition-all duration-500 cursor-none">
+                    <h3 class="font-serif text-3xl md:text-4xl text-gray-400 group-hover:text-gold transition-colors">01. Editorial & Fashion</h3>
+                    <span class="text-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">View Work</span>
+                </div>
+                <div class="group border-b border-gray-200 dark:border-gray-800 pb-8 flex justify-between items-center hover:px-6 transition-all duration-500 cursor-none">
+                    <h3 class="font-serif text-3xl md:text-4xl text-gray-400 group-hover:text-gold transition-colors">02. Luxury Weddings</h3>
+                    <span class="text-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">View Work</span>
+                </div>
+                <div class="group border-b border-gray-200 dark:border-gray-800 pb-8 flex justify-between items-center hover:px-6 transition-all duration-500 cursor-none">
+                    <h3 class="font-serif text-3xl md:text-4xl text-gray-400 group-hover:text-gold transition-colors">03. Portraiture</h3>
+                    <span class="text-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity">View Work</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-32 bg-gray-50 dark:bg-[#111] md:cursor-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20 gs-reveal">
+            <h2 class="font-serif text-5xl md:text-6xl font-bold">Selected Works</h2>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="portfolio-grid" class="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
+                <div class="relative overflow-hidden group portfolio-item lightbox-trigger md:cursor-none break-inside-avoid">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center text-white text-sm uppercase tracking-widest">Enlarge</div>
+                </div>
+                <div class="relative overflow-hidden group portfolio-item lightbox-trigger md:cursor-none break-inside-avoid">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center text-white text-sm uppercase tracking-widest">Enlarge</div>
+                </div>
+                <div class="relative overflow-hidden group portfolio-item lightbox-trigger md:cursor-none break-inside-avoid">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90" class="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center text-white text-sm uppercase tracking-widest">Enlarge</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 bg-light dark:bg-dark md:cursor-none">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 gs-reveal">
+            <div class="text-center mb-16">
+                <h4 class="text-gold tracking-[0.2em] uppercase text-xs mb-4">Reserve Your Date</h4>
+                <h2 class="font-serif text-5xl font-bold">Book a Session</h2>
+            </div>
+            
+            <form class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <input type="text" placeholder="Your Name" class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors md:cursor-none">
+                    <input type="email" placeholder="Email Address" class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors md:cursor-none">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <select class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors text-gray-500 appearance-none md:cursor-none">
+                        <option value="">Select Service</option>
+                        <option value="wedding">Wedding Coverage</option>
+                        <option value="editorial">Editorial / Fashion</option>
+                        <option value="portrait">Portrait Session</option>
+                    </select>
+                    <input type="date" class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors text-gray-500 md:cursor-none">
+                </div>
+                <textarea placeholder="Tell us about your vision..." rows="4" class="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 py-3 focus:outline-none focus:border-gold transition-colors md:cursor-none"></textarea>
+                
+                <div class="text-center pt-8">
+                    <button type="submit" class="px-12 py-4 bg-gray-900 text-white dark:bg-white dark:text-dark hover:bg-gold dark:hover:bg-gold hover:text-white transition-all duration-300 uppercase text-sm tracking-[0.2em] md:cursor-none">Send Inquiry</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-50 dark:bg-[#0a0a0a] py-16 text-center md:cursor-none">
+        <h2 class="font-serif text-3xl font-bold tracking-widest mb-6">LUMINA.</h2>
+        <div class="flex justify-center space-x-8 mb-8">
+            <a href="#" class="text-xs uppercase tracking-[0.2em] text-gray-500 hover:text-gold transition md:cursor-none">Instagram</a>
+            <a href="#" class="text-xs uppercase tracking-[0.2em] text-gray-500 hover:text-gold transition md:cursor-none">Vogue</a>
+            <a href="#" class="text-xs uppercase tracking-[0.2em] text-gray-500 hover:text-gold transition md:cursor-none">Pinterest</a>
+        </div>
+        <p class="text-xs text-gray-400 tracking-widest">© 2026 LUMINA STUDIO.</p>
+    </footer>
+
+    <div id="admin-panel" class="hidden fixed bottom-8 left-8 z-[90] md:cursor-none">
+        <label for="admin-upload" class="px-6 py-3 bg-gold text-dark font-bold text-xs uppercase tracking-[0.2em] shadow-lg hover:bg-white transition-colors cursor-pointer md:cursor-none">
+            + Upload Image (Test)
+        </label>
+        <input type="file" id="admin-upload" accept="image/png, image/jpeg, image/webp" class="hidden" multiple>
+    </div>
+
+    <div id="lightbox" class="fixed inset-0 z-[999999] bg-[#050505] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 md:cursor-none overflow-hidden">
+        <div class="absolute top-8 right-8 z-50 flex space-x-6">
+            <button id="zoom-out" class="text-white text-4xl hover:text-gold transition-colors md:cursor-none" title="Zoom Out">−</button>
+            <button id="zoom-in" class="text-white text-4xl hover:text-gold transition-colors md:cursor-none" title="Zoom In">+</button>
+            <button id="lightbox-close" class="text-white text-5xl hover:text-gold transition-colors md:cursor-none ml-4">&times;</button>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 text-xs tracking-widest uppercase z-50 pointer-events-none">
+            Scroll to Zoom • Drag to Pan
+        </div>
+        <div id="lightbox-img-container" class="w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing">
+            <img id="lightbox-img" src="" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl transition-transform duration-200 ease-out origin-center" style="image-rendering: high-quality;">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
