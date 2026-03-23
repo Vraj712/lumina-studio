@@ -47,23 +47,27 @@
 
     <nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-white/90 dark:bg-[#0B1120]/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-3 items-center h-20 lg:h-24">
+            <div class="grid grid-cols-2 lg:grid-cols-[1fr_auto_1fr] items-center h-20 lg:h-24">
                 
                 <div class="hidden lg:flex justify-start space-x-8 items-center overflow-hidden">
-                    <a href="#about" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">About</a>
-                    <a href="#portfolio" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Portfolio</a>
+                    <a href="index.html" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Home</a>
+                    <a href="index.html#portfolio" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Quick Portfolio</a>
+                    <a href="#films" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Films</a>
                 </div>
-                <div class="lg:hidden"></div> <div class="flex justify-center z-10 overflow-hidden text-center w-full">
-                    <a href="#" class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white whitespace-nowrap">LUMINA.</a>
+                <div class="lg:hidden"></div> <div class="flex justify-start lg:justify-center z-10 overflow-hidden text-center w-full px-4">
+                    <a href="index.html" class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white whitespace-nowrap">LUMINA.</a>
                 </div>
 
                 <div class="flex justify-end items-center space-x-6 xl:space-x-8 overflow-hidden">
                     <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
-                        <button id="theme-toggle" class="text-lg hover:text-brand-gold transition-colors shrink-0">
+                        <a href="about.html" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">About</a>
+                        <a href="index.html#contact" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Contact</a>
+                        
+                        <button id="theme-toggle" class="text-lg hover:text-brand-gold transition-colors shrink-0 border-l border-gray-300 dark:border-gray-700 pl-6">
                             <i class="fa-solid fa-moon dark:hidden"></i>
                             <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
                         </button>
-                        <a href="#booking" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap shrink-0">Book Now</a>
+                        <a href="index.html#booking" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap shrink-0">Book Now</a>
                     </div>
                     <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none text-gray-900 dark:text-white p-2">
                         <i class="fa-solid fa-bars"></i>
@@ -75,9 +79,12 @@
         
         <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-[#0B1120] border-t border-gray-200 dark:border-gray-800 absolute w-full shadow-2xl">
             <div class="px-4 pt-6 pb-8 space-y-6 flex flex-col text-center">
-                <a href="#about" class="block text-sm tracking-widest uppercase font-medium">About</a>
-                <a href="#portfolio" class="block text-sm tracking-widest uppercase font-medium">Portfolio</a>
-                <a href="#booking" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">Book Now</a>
+                <a href="index.html" class="block text-sm tracking-widest uppercase font-medium">Home</a>
+                <a href="index.html#portfolio" class="block text-sm tracking-widest uppercase font-medium">Quick Portfolio</a>
+                <a href="#films" class="block text-sm tracking-widest uppercase font-medium">Films</a>
+                <a href="about.html" class="block text-sm tracking-widest uppercase font-medium">About</a>
+                <a href="index.html#contact" class="block text-sm tracking-widest uppercase font-medium">Contact</a>
+                <a href="index.html#booking" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">Book Now</a>
                 <button id="mobile-theme-toggle" class="text-sm tracking-widest uppercase font-medium text-gray-500 hover:text-brand-gold mt-4">Toggle Dark Mode</button>
             </div>
         </div>

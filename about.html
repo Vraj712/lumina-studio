@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Lumina Studio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Poppins"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { gold: '#D4AF37', dark: '#0F172A', light: '#F8FAFC' }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-brand-light text-gray-800 dark:bg-brand-dark dark:text-gray-200 transition-colors duration-300 font-sans antialiased overflow-x-hidden pt-20 lg:pt-24">
+
+    <div class="custom-cursor hidden md:block"></div>
+
+    <nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-white/90 dark:bg-[#0B1120]/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-3 items-center h-20 lg:h-24">
+                <div class="hidden lg:flex justify-start space-x-8 items-center overflow-hidden">
+                    <a href="index.html" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Home</a>
+                    <a href="index.html#portfolio" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Quick Portfolio</a>
+                    <a href="index.html#films" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Films</a>
+                </div>
+                <div class="lg:hidden"></div>
+                <div class="flex justify-center z-10 overflow-hidden text-center w-full">
+                    <a href="index.html" class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white whitespace-nowrap">LUMINA.</a>
+                </div>
+                <div class="flex justify-end items-center space-x-6 xl:space-x-8 overflow-hidden">
+                    <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+                        <a href="about.html" class="text-xs font-semibold text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap border-b border-brand-gold pb-1">About</a>
+                        <a href="index.html#contact" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Contact</a>
+                        <button id="theme-toggle" class="text-lg hover:text-brand-gold transition-colors shrink-0 border-l border-gray-300 dark:border-gray-700 pl-6">
+                            <i class="fa-solid fa-moon dark:hidden"></i>
+                            <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                        </button>
+                        <a href="index.html#booking" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap shrink-0">Book Now</a>
+                    </div>
+                    <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none text-gray-900 dark:text-white p-2">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-[#0B1120] border-t border-gray-200 dark:border-gray-800 absolute w-full shadow-2xl">
+            <div class="px-4 pt-6 pb-8 space-y-6 flex flex-col text-center">
+                <a href="index.html" class="block text-sm tracking-widest uppercase font-medium">Home</a>
+                <a href="about.html" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">About</a>
+                <a href="index.html#booking" class="block text-sm tracking-widest uppercase font-medium">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-24 text-center px-4 max-w-4xl mx-auto">
+        <h4 class="text-brand-gold tracking-[0.3em] uppercase text-xs font-semibold mb-6" data-aos="fade-up">Our Philosophy</h4>
+        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 dark:text-white leading-tight" data-aos="fade-up" data-aos-delay="100">Preserving Your Story in its Most Authentic Form.</h1>
+        <p class="text-gray-600 dark:text-gray-400 font-light text-lg md:text-xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+            We specialize in capturing the purest moments of love, emotion, and joy. Our candid approach allows us to freeze those fleeting memories—from heartfelt glances to bursts of laughter—allowing you to relive those magical moments for years to come.
+        </p>
+    </header>
+
+    <section class="py-12 bg-white dark:bg-[#0B1120] px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
+            <div class="col-span-2 row-span-2 relative overflow-hidden rounded-sm group shadow-xl" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Photographer in Action" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+            </div>
+            <div class="col-span-2 md:col-span-1 row-span-1 relative overflow-hidden rounded-sm group shadow-xl" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding Detail" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
+            </div>
+            <div class="col-span-2 md:col-span-1 row-span-1 relative overflow-hidden rounded-sm group shadow-xl" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Couple Laughing" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
+            </div>
+            <div class="col-span-2 row-span-1 relative overflow-hidden rounded-sm group shadow-xl" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Cinematic Videography" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-light dark:bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-camera-retro text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="font-serif text-2xl font-bold mb-4 text-gray-900 dark:text-white">Candid Photography</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                        With no forced poses or staged shots, we embrace a 'hidden camera' vibe. We capture your emotions—laughter, tears, and surprise—in their absolute rawest forms.
+                    </p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-film text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="font-serif text-2xl font-bold mb-4 text-gray-900 dark:text-white">Cinematic Videography</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                        Taking wedding filmmaking to new heights. We provide a visual treat packaged with brilliant sound design, background scores, and skillful editorial pacing.
+                    </p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-heart text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="font-serif text-2xl font-bold mb-4 text-gray-900 dark:text-white">Comfort & Trust</h3>
+                    <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+                        Creating a comfort zone for to-be-weds and their families is our priority. We pave the way for unbridled emotions so you can simply be present on your special day.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white dark:bg-[#0B1120] text-center px-4">
+        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white" data-aos="fade-up">Ready to create beautiful memories?</h2>
+        <a href="index.html#booking" class="inline-block px-10 py-4 bg-brand-gold text-brand-dark font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-brand-dark transition-colors duration-300 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+            Check Our Availability
+        </a>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">LUMINA.</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm font-light">© 2026 Lumina Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
