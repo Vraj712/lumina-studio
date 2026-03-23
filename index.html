@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Photography Studio</title>
+    <title>Lumina | Premium Photography Studio</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
@@ -34,39 +34,38 @@
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-brand-light text-gray-800 dark:bg-brand-dark dark:text-gray-200 transition-colors duration-300 font-sans antialiased overflow-hidden">
+<body class="bg-brand-light text-gray-800 dark:bg-brand-dark dark:text-gray-200 transition-colors duration-300 font-sans antialiased overflow-x-hidden">
 
-    <div id="preloader" class="fixed inset-0 z-[999999] bg-brand-dark flex flex-col items-center justify-center transition-opacity duration-1000">
-        <h1 class="font-serif text-4xl md:text-5xl text-white tracking-[0.3em] uppercase loader-text opacity-0 translate-y-4 transition-all duration-1000 ease-out">Lens&Light</h1>
-        <div class="w-48 h-[1px] bg-gray-800 mt-8 relative overflow-hidden">
+    <div id="preloader" class="fixed inset-0 z-[999999] bg-brand-dark flex flex-col items-center justify-center transition-opacity duration-1000 w-full h-full m-0 p-0">
+        <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white tracking-[0.2em] md:tracking-[0.3em] uppercase loader-text opacity-0 translate-y-4 transition-all duration-1000 ease-out text-center">LUMINA.</h1>
+        <div class="w-32 md:w-48 h-[2px] bg-gray-800 mt-6 relative overflow-hidden flex-shrink-0">
             <div class="absolute top-0 left-0 h-full bg-brand-gold loader-bar w-0 transition-all duration-[1.5s] ease-in-out"></div>
         </div>
     </div>
 
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/80 dark:bg-brand-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800" id="navbar">
+    <div class="custom-cursor hidden md:block"></div>
+
+    <nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-white/90 dark:bg-[#0B1120]/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24 relative">
+            <div class="grid grid-cols-3 items-center h-20 lg:h-24">
                 
-                <div class="w-1/3 flex justify-start md:justify-end md:pr-12">
-                    <div class="hidden md:flex space-x-10 items-center">
-                        <a href="#about" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest">About</a>
-                        <a href="#portfolio" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest">Portfolio</a>
-                    </div>
+                <div class="hidden lg:flex justify-start space-x-8 items-center overflow-hidden">
+                    <a href="#about" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">About</a>
+                    <a href="#portfolio" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Portfolio</a>
+                </div>
+                <div class="lg:hidden"></div> <div class="flex justify-center z-10 overflow-hidden text-center w-full">
+                    <a href="#" class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white whitespace-nowrap">LUMINA.</a>
                 </div>
 
-                <div class="w-1/3 flex justify-center z-10">
-                    <a href="#" class="font-serif text-3xl md:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white">Lens&Light</a>
-                </div>
-
-                <div class="w-1/3 flex justify-end md:pl-12 items-center">
-                    <div class="hidden md:flex space-x-8 items-center">
-                        <button id="theme-toggle" class="text-lg hover:text-brand-gold transition-colors">
+                <div class="flex justify-end items-center space-x-6 xl:space-x-8 overflow-hidden">
+                    <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+                        <button id="theme-toggle" class="text-lg hover:text-brand-gold transition-colors shrink-0">
                             <i class="fa-solid fa-moon dark:hidden"></i>
                             <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
                         </button>
-                        <a href="#booking" class="px-6 py-3 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap">Book Now</a>
+                        <a href="#booking" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap shrink-0">Book Now</a>
                     </div>
-                    <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">
+                    <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none text-gray-900 dark:text-white p-2">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
@@ -74,16 +73,16 @@
             </div>
         </div>
         
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-brand-dark border-t border-gray-200 dark:border-gray-800 absolute w-full">
-            <div class="px-4 pt-4 pb-6 space-y-6 flex flex-col text-center">
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-[#0B1120] border-t border-gray-200 dark:border-gray-800 absolute w-full shadow-2xl">
+            <div class="px-4 pt-6 pb-8 space-y-6 flex flex-col text-center">
                 <a href="#about" class="block text-sm tracking-widest uppercase font-medium">About</a>
                 <a href="#portfolio" class="block text-sm tracking-widest uppercase font-medium">Portfolio</a>
                 <a href="#booking" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">Book Now</a>
-                <button id="mobile-theme-toggle" class="text-sm tracking-widest uppercase font-medium">Toggle Theme</button>
+                <button id="mobile-theme-toggle" class="text-sm tracking-widest uppercase font-medium text-gray-500 hover:text-brand-gold mt-4">Toggle Dark Mode</button>
             </div>
         </div>
     </nav>
-    
+
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1516224583488-26190471b696?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Hero Background" class="w-full h-full object-cover object-center" />
@@ -100,6 +99,19 @@
             </div>
         </div>
     </header>
+
+    <div class="bg-brand-gold text-brand-dark py-4 overflow-hidden flex whitespace-nowrap w-full">
+        <div class="marquee-track font-semibold text-sm tracking-[0.3em] uppercase flex flex-nowrap items-center w-max">
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+        </div>
+    </div>
 
     <section id="about" class="py-24 bg-brand-light dark:bg-brand-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,7 +166,7 @@
                         <i class="fa-solid fa-expand text-white text-3xl"></i>
                     </div>
                 </div>
-                 </div>
+            </div>
         </div>
     </section>
 
@@ -227,7 +239,7 @@
                 
                 <div class="space-y-4 mb-8">
                     <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-location-dot w-8 text-brand-gold"></i> 123 Gallery Row, New York, NY 10012</p>
-                    <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-envelope w-8 text-brand-gold"></i> hello@lensandlight.com</p>
+                    <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-envelope w-8 text-brand-gold"></i> hello@luminastudio.com</p>
                 </div>
 
                 <a href="https://wa.me/1234567890" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#25D366] text-white font-medium rounded-sm hover:bg-[#1DA851] transition-colors shadow-lg">
@@ -243,18 +255,18 @@
 
     <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">Lens&Light</h2>
+            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">LUMINA.</h2>
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-pinterest"></i></a>
                 <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
             </div>
-            <p class="text-gray-500 text-sm font-light">&copy; 2023 Lens&Light Studio. All rights reserved.</p>
+            <p class="text-gray-500 text-sm font-light">© 2026 Lumina Studio. All rights reserved.</p>
         </div>
     </footer>
 
     <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex justify-center items-center opacity-0 transition-opacity duration-300">
-        <button id="lightbox-close" class="absolute top-6 right-8 text-white text-4xl hover:text-brand-gold transition-colors">&times;</button>
+        <button id="lightbox-close" class="absolute top-6 right-8 text-white text-4xl hover:text-brand-gold transition-colors">×</button>
         <img id="lightbox-img" src="" alt="Fullscreen Image" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl">
     </div>
 

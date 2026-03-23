@@ -13,9 +13,55 @@
     background: #D4AF37; 
 }
 
-/* Ensure smooth scrolling across the whole document */
+/* Ensure smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* HARDWARE ACCELERATED CUSTOM CURSOR */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-color: #d4af37;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999999;
+    transition: width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out, border 0.2s ease-out;
+    will-change: transform;
+    transform: translate3d(-50%, -50%, 0); 
+}
+
+.custom-cursor.hover {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #d4af37;
+}
+
+@media (min-width: 768px) {
+    *, html, body {
+        cursor: none !important;
+    }
+}
+
+/* FIXED SEAMLESS MARQUEE - Single Line */
+.marquee-track {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
 }
 
 /* Masonry Layout Tweaks */
@@ -38,6 +84,5 @@ html {
 
 /* Before/After Slider specific utility */
 #ba-before img {
-    /* Ensures the before image stays exactly aligned with the background image regardless of clipping */
     object-position: left center;
 }
