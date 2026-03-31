@@ -1,0 +1,88 @@
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0F172A; 
+}
+::-webkit-scrollbar-thumb {
+    background: #475569; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37; 
+}
+
+/* Ensure smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* HARDWARE ACCELERATED CUSTOM CURSOR */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-color: #d4af37;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999999;
+    transition: width 0.2s ease-out, height 0.2s ease-out, background-color 0.2s ease-out, border 0.2s ease-out;
+    will-change: transform;
+    transform: translate3d(-50%, -50%, 0); 
+}
+
+.custom-cursor.hover {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #d4af37;
+}
+
+@media (min-width: 768px) {
+    *, html, body {
+        cursor: none !important;
+    }
+}
+
+/* FIXED SEAMLESS MARQUEE - Single Line */
+.marquee-track {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* Masonry Layout Tweaks */
+.break-inside-avoid {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+/* Hide images not matching filter categories */
+.gallery-item.hidden {
+    display: none;
+}
+
+/* Active state for category buttons */
+.filter-btn.active {
+    color: #D4AF37;
+    border-color: #D4AF37;
+}
+
+/* Before/After Slider specific utility */
+#ba-before img {
+    object-position: left center;
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina | Premium Photography Studio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Poppins"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#0F172A',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-brand-light text-gray-800 dark:bg-brand-dark dark:text-gray-200 transition-colors duration-300 font-sans antialiased overflow-x-hidden">
+
+    <div id="preloader" class="fixed inset-0 z-[999999] bg-brand-dark flex flex-col items-center justify-center transition-opacity duration-1000 w-full h-full m-0 p-0">
+        <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white tracking-[0.2em] md:tracking-[0.3em] uppercase loader-text opacity-0 translate-y-4 transition-all duration-1000 ease-out text-center">LUMINA.</h1>
+        <div class="w-32 md:w-48 h-[2px] bg-gray-800 mt-6 relative overflow-hidden flex-shrink-0">
+            <div class="absolute top-0 left-0 h-full bg-brand-gold loader-bar w-0 transition-all duration-[1.5s] ease-in-out"></div>
+        </div>
+    </div>
+
+    <div class="custom-cursor hidden md:block"></div>
+<nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-white/40 dark:bg-[#0F172A]/50 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/50 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-[1fr_auto_1fr] items-center h-20 lg:h-24">
+                
+                <div class="hidden lg:flex justify-start space-x-8 items-center overflow-hidden">
+                    <a href="index.html" class="group relative text-xs font-semibold text-gray-900 dark:text-white uppercase tracking-widest whitespace-nowrap py-1">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </a>
+                    <a href="index.html#portfolio" class="group relative text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white uppercase tracking-widest whitespace-nowrap py-1">
+                        Quick Portfolio
+                        <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </a>
+                    <a href="films.html" class="group relative text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white uppercase tracking-widest whitespace-nowrap py-1">
+                        Films
+                        <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </a>
+                </div>
+                
+                <div class="lg:hidden"></div> 
+
+                <div class="flex justify-start lg:justify-center z-10 overflow-hidden text-center w-full px-4">
+                    <a href="index.html" class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white whitespace-nowrap drop-shadow-sm">LUMINA.</a>
+                </div>
+
+                <div class="flex justify-end items-center space-x-6 xl:space-x-8 overflow-hidden">
+                    <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+                        <a href="about.html" class="group relative text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white uppercase tracking-widest whitespace-nowrap py-1">
+                            About
+                            <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        </a>
+                        <a href="index.html#contact" class="group relative text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white uppercase tracking-widest whitespace-nowrap py-1">
+                            Contact
+                            <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        </a>
+                        
+                        <button id="theme-toggle" class="text-lg text-gray-800 dark:text-gray-200 hover:text-brand-gold transition-colors shrink-0 border-l border-gray-400 dark:border-gray-600 pl-6">
+                            <i class="fa-solid fa-moon dark:hidden"></i>
+                            <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                        </button>
+                        <a href="index.html#booking" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap shrink-0">Book Now</a>
+                    </div>
+                    
+                    <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none text-gray-900 dark:text-white p-2">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 dark:bg-[#0F172A]/95 backdrop-blur-3xl border-t border-gray-200 dark:border-gray-800 absolute w-full shadow-2xl">
+            <div class="px-4 pt-6 pb-8 space-y-6 flex flex-col text-center">
+                <a href="index.html" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">Home</a>
+                <a href="index.html#portfolio" class="block text-sm tracking-widest uppercase font-medium">Quick Portfolio</a>
+                <a href="films.html" class="block text-sm tracking-widest uppercase font-medium">Films</a>
+                <a href="about.html" class="block text-sm tracking-widest uppercase font-medium">About</a>
+                <a href="index.html#contact" class="block text-sm tracking-widest uppercase font-medium">Contact</a>
+                <a href="index.html#booking" class="block text-sm tracking-widest uppercase font-medium">Book Now</a>
+                <button id="mobile-theme-toggle" class="text-sm tracking-widest uppercase font-medium text-gray-500 hover:text-brand-gold mt-4">Toggle Dark Mode</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-end justify-start overflow-hidden pb-20 md:pb-32 px-4 sm:px-10 lg:px-20">
+        <div class="absolute inset-0 z-0">
+            <img src="hero-bg.jpg" alt="Hero Background" class="w-full h-full object-cover object-[center_30%]" />
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 text-left max-w-3xl w-full" data-aos="fade-up" data-aos-duration="1000">
+            <p class="text-brand-gold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 font-semibold drop-shadow-md">Capturing Timeless Moments</p>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 leading-tight drop-shadow-lg">Visual Poetry.</h1>
+            <p class="text-gray-200 font-light text-base md:text-lg mb-10 max-w-xl drop-shadow-md">Luxury wedding, editorial, and portrait photography based in New York. We craft stories through light, shadow, and raw emotion.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-start gap-4">
+                <a href="#portfolio" class="px-8 py-4 bg-brand-gold text-brand-dark font-medium uppercase tracking-widest hover:bg-white transition-colors duration-300 shadow-lg text-center">View Portfolio</a>
+                <a href="#booking" class="px-8 py-4 border border-white bg-black/30 backdrop-blur-sm text-white font-medium uppercase tracking-widest hover:bg-white hover:text-brand-dark transition-colors duration-300 shadow-lg text-center">Book Session</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-brand-gold text-brand-dark py-4 overflow-hidden flex whitespace-nowrap w-full">
+        <div class="marquee-track font-semibold text-sm tracking-[0.3em] uppercase flex flex-nowrap items-center w-max">
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
+        </div>
+    </div>
+
+    <section id="about" class="py-24 bg-brand-light dark:bg-brand-dark scroll-mt-20 lg:scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative" data-aos="fade-right">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-brand-gold/20 to-transparent backdrop-blur-sm -z-10 rounded-lg transform translate-x-4 translate-y-4"></div>
+                    <img src="https://images.unsplash.com/photo-1554046920-90dcac824b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Photographer" class="w-full h-[600px] object-cover shadow-2xl rounded-sm" loading="lazy">
+                </div>
+                <div data-aos="fade-left">
+                    <h4 class="text-brand-gold tracking-widest uppercase text-sm mb-2">The Artist</h4>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Hello, I'm Elena.</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed font-light">With over 10 years of experience, my approach is rooted in fine art and editorial storytelling. I believe every frame should evoke a feeling, a memory, a fleeting moment frozen in time forever.</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed font-light">Whether it's the chaotic joy of a wedding day or the quiet intimacy of a portrait session, I am there to document your truth.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Stylized_signature_sample.svg" alt="Signature" class="h-12 dark:invert opacity-70">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-white dark:bg-[#0B1120] scroll-mt-20 lg:scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Selected Works</h2>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-8" id="portfolio-filters">
+                    <button class="filter-btn active px-4 py-1 border-b-2 border-brand-gold text-sm uppercase tracking-wider" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-1 border-b-2 border-transparent hover:border-brand-gold text-sm uppercase tracking-wider text-gray-500" data-filter="wedding">Wedding</button>
+                    <button class="filter-btn px-4 py-1 border-b-2 border-transparent hover:border-brand-gold text-sm uppercase tracking-wider text-gray-500" data-filter="portrait">Portrait</button>
+                    <button class="filter-btn px-4 py-1 border-b-2 border-transparent hover:border-brand-gold text-sm uppercase tracking-wider text-gray-500" data-filter="editorial">Editorial</button>
+                </div>
+            </div>
+
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6" id="gallery-grid">
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-light dark:bg-brand-dark overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
+            <h4 class="text-brand-gold tracking-widest uppercase text-sm mb-2">The Editing Process</h4>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mb-12 text-gray-900 dark:text-white">Before & After</h2>
+            
+            <div class="relative w-full aspect-[3/2] rounded-lg overflow-hidden select-none" id="ba-slider">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="After" class="absolute inset-0 w-full h-full object-cover pointer-events-none filter contrast-125 brightness-110" loading="lazy">
+                
+                <div class="absolute inset-0 w-1/2 h-full overflow-hidden border-r-4 border-white shadow-[5px_0_15px_rgba(0,0,0,0.5)]" id="ba-before">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Before" class="absolute top-0 left-0 w-[100vw] max-w-[896px] h-full object-cover pointer-events-none filter grayscale opacity-80" loading="lazy">
+                </div>
+
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg cursor-ew-resize z-10" id="ba-handle">
+                    <i class="fa-solid fa-arrows-left-right text-brand-dark"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-24 bg-brand-dark text-white relative overflow-hidden scroll-mt-20 lg:scroll-mt-24">
+        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 relative z-10" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">Book a Session</h2>
+                <p class="text-gray-400 font-light">Let's create something beautiful together. Fill out the form below to check availability.</p>
+            </div>
+
+            <form action="https://formspree.io/f/maqpgpqw" method="POST" class="bg-white/10 backdrop-blur-md p-8 md:p-12 rounded-lg border border-white/20 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Full Name</label>
+                        <input type="text" name="Full Name" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white placeholder-gray-500" placeholder="Jane Doe" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Email Address</label>
+                        <input type="email" name="Email" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white placeholder-gray-500" placeholder="jane@example.com" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Phone Number</label>
+                        <input type="tel" name="Phone" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white placeholder-gray-500" placeholder="+1 (555) 000-0000">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Event Type</label>
+                        <select name="Event Type" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white appearance-none cursor-pointer">
+                            <option value="wedding" class="bg-brand-dark text-white">Wedding</option>
+                            <option value="portrait" class="bg-brand-dark text-white">Portrait Session</option>
+                            <option value="editorial" class="bg-brand-dark text-white">Editorial / Commercial</option>
+                            <option value="other" class="bg-brand-dark text-white">Other Event</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Preferred Date</label>
+                        <input type="date" name="Date" class="w-full bg-transparent border-b border-gray-500 focus:border-brand-gold py-2 outline-none transition-colors text-white [color-scheme:dark]">
+                    </div>
+                </div>
+                <button type="submit" class="w-full py-4 bg-brand-gold text-brand-dark font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 mt-6">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-light dark:bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="font-serif text-4xl font-bold mb-6 text-gray-900 dark:text-white">Get in Touch</h2>
+                <p class="text-gray-600 dark:text-gray-400 font-light mb-8">Located in the heart of Manhattan. Available for travel worldwide.</p>
+                
+                <div class="space-y-4 mb-8">
+                    <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-location-dot w-8 text-brand-gold"></i> 123 Gallery Row, New York, NY 10012</p>
+                    <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-envelope w-8 text-brand-gold"></i> hello@luminastudio.com</p>
+                </div>
+
+                <a href="https://wa.me/1234567890" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#25D366] text-white font-medium rounded-sm hover:bg-[#1DA851] transition-colors shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Chat on WhatsApp
+                </a>
+            </div>
+            
+            <div class="h-96 rounded-lg overflow-hidden shadow-xl filter grayscale hover:grayscale-0 transition-all duration-500" data-aos="fade-left">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.518174526978!2d-74.00282478459458!3d40.72859187932971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598f828a1c93%3A0xc3b5168e7b3ebec0!2sSoHo%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1689280000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">LUMINA.</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm font-light">© 2026 Lumina Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex justify-center items-center opacity-0 transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-8 text-white text-4xl hover:text-brand-gold transition-colors">×</button>
+        <img id="lightbox-img" src="" alt="Fullscreen Image" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl">
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</body>
+</html>
