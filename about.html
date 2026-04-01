@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Lumina Studio</title>
+    <title>About | VDS Photography</title>
+    <link rel="icon" type="image/png" href="logo.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -28,121 +28,111 @@
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-brand-light text-gray-800 dark:bg-brand-dark dark:text-gray-200 transition-colors duration-300 font-sans antialiased overflow-x-hidden pt-20 lg:pt-24">
+<body class="bg-[#0B1120] text-gray-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
 
-    <div class="custom-cursor hidden md:block"></div>
-
-    <nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-white/90 dark:bg-[#0B1120]/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800" id="navbar">
+    <nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-black/40 backdrop-blur-md border-b border-white/10" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-3 items-center h-20 lg:h-24">
-                <div class="hidden lg:flex justify-start space-x-8 items-center overflow-hidden">
-                    <a href="index.html" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Home</a>
-                    <a href="index.html#portfolio" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Quick Portfolio</a>
-                    <a href="index.html#films" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Films</a>
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    
+                    <a href="index.html" class="mr-4 sm:mr-6 text-white/70 hover:text-brand-gold transition-all text-lg sm:text-xl hover:-translate-x-1">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                    </a>
+
+                    <a href="index.html" class="flex items-center gap-4">
+                        <img src="logo.png" alt="VDS Logo" class="h-12 sm:h-14 w-auto rounded-full shadow-md">
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-widest text-white uppercase hidden sm:block">VDS.</span>
+                    </a>
                 </div>
-                <div class="lg:hidden"></div>
-                <div class="flex justify-center z-10 overflow-hidden text-center w-full">
-                    <a href="index.html" class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white whitespace-nowrap">LUMINA.</a>
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <a href="index.html#portfolio" class="text-xs font-bold text-white/80 hover:text-brand-gold uppercase tracking-[0.2em] transition-all">Quick Portfolio</a>
+                    <a href="films.html" class="text-xs font-bold text-white/80 hover:text-brand-gold uppercase tracking-[0.2em] transition-all">Films</a>
+                    <a href="about.html" class="text-xs font-bold text-brand-gold uppercase tracking-[0.2em] transition-all">About</a>
+                    <a href="index.html#booking" class="px-6 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all rounded-sm text-xs font-bold uppercase tracking-widest">Book Now</a>
                 </div>
-                <div class="flex justify-end items-center space-x-6 xl:space-x-8 overflow-hidden">
-                    <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
-                        <a href="about.html" class="text-xs font-semibold text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap border-b border-brand-gold pb-1">About</a>
-                        <a href="index.html#contact" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Contact</a>
-                        <button id="theme-toggle" class="text-lg hover:text-brand-gold transition-colors shrink-0 border-l border-gray-300 dark:border-gray-700 pl-6">
-                            <i class="fa-solid fa-moon dark:hidden"></i>
-                            <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
-                        </button>
-                        <a href="index.html#booking" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap shrink-0">Book Now</a>
-                    </div>
-                    <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none text-gray-900 dark:text-white p-2">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-[#0B1120] border-t border-gray-200 dark:border-gray-800 absolute w-full shadow-2xl">
-            <div class="px-4 pt-6 pb-8 space-y-6 flex flex-col text-center">
-                <a href="index.html" class="block text-sm tracking-widest uppercase font-medium">Home</a>
-                <a href="about.html" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">About</a>
-                <a href="index.html#booking" class="block text-sm tracking-widest uppercase font-medium">Book Now</a>
             </div>
         </div>
     </nav>
 
-    <header class="py-24 text-center px-4 max-w-4xl mx-auto">
-        <h4 class="text-brand-gold tracking-[0.3em] uppercase text-xs font-semibold mb-6" data-aos="fade-up">Our Philosophy</h4>
-        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 dark:text-white leading-tight" data-aos="fade-up" data-aos-delay="100">Preserving Your Story in its Most Authentic Form.</h1>
-        <p class="text-gray-600 dark:text-gray-400 font-light text-lg md:text-xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-            We specialize in capturing the purest moments of love, emotion, and joy. Our candid approach allows us to freeze those fleeting memories—from heartfelt glances to bursts of laughter—allowing you to relive those magical moments for years to come.
-        </p>
+    <header class="pt-40 pb-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+        <div class="relative z-10" data-aos="fade-up">
+            <p class="text-brand-gold tracking-[0.4em] uppercase text-sm mb-4 font-semibold">Behind The Lens</p>
+            <h1 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6">The Visionary.</h1>
+        </div>
     </header>
 
-    <section class="py-12 bg-white dark:bg-[#0B1120] px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[300px]">
-            <div class="col-span-2 row-span-2 relative overflow-hidden rounded-sm group shadow-xl" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Photographer in Action" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
-                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
-            </div>
-            <div class="col-span-2 md:col-span-1 row-span-1 relative overflow-hidden rounded-sm group shadow-xl" data-aos="zoom-in" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding Detail" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
-            </div>
-            <div class="col-span-2 md:col-span-1 row-span-1 relative overflow-hidden rounded-sm group shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Couple Laughing" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
-            </div>
-            <div class="col-span-2 row-span-1 relative overflow-hidden rounded-sm group shadow-xl" data-aos="zoom-in" data-aos-delay="300">
-                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Cinematic Videography" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000">
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-brand-light dark:bg-brand-dark">
+    <section class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <i class="fa-solid fa-camera-retro text-4xl text-brand-gold mb-6"></i>
-                    <h3 class="font-serif text-2xl font-bold mb-4 text-gray-900 dark:text-white">Candid Photography</h3>
-                    <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-                        With no forced poses or staged shots, we embrace a 'hidden camera' vibe. We capture your emotions—laughter, tears, and surprise—in their absolute rawest forms.
-                    </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative" data-aos="fade-right">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-brand-gold/20 to-transparent backdrop-blur-sm -z-10 rounded-sm transform -translate-x-4 -translate-y-4"></div>
+                    <img src="https://images.unsplash.com/photo-1554046920-90dcac824b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="VDS Photographer" class="w-full h-[700px] object-cover shadow-2xl rounded-sm filter grayscale hover:grayscale-0 transition-all duration-700">
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <i class="fa-solid fa-film text-4xl text-brand-gold mb-6"></i>
-                    <h3 class="font-serif text-2xl font-bold mb-4 text-gray-900 dark:text-white">Cinematic Videography</h3>
-                    <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-                        Taking wedding filmmaking to new heights. We provide a visual treat packaged with brilliant sound design, background scores, and skillful editorial pacing.
-                    </p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="300">
-                    <i class="fa-solid fa-heart text-4xl text-brand-gold mb-6"></i>
-                    <h3 class="font-serif text-2xl font-bold mb-4 text-gray-900 dark:text-white">Comfort & Trust</h3>
-                    <p class="text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-                        Creating a comfort zone for to-be-weds and their families is our priority. We pave the way for unbridled emotions so you can simply be present on your special day.
-                    </p>
+                <div data-aos="fade-left" class="space-y-6">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-white">Documenting Life's Truest Moments.</h2>
+                    <p class="text-gray-400 leading-relaxed font-light text-lg">My journey with a camera began over a decade ago. What started as a fascination with light and shadow quickly evolved into a lifelong obsession with human connection.</p>
+                    <p class="text-gray-400 leading-relaxed font-light text-lg">At VDS Photography, my philosophy is simple: I don't just want to show you what your day looked like. I want to show you exactly how it felt. I blend editorial fashion techniques with raw, photojournalistic storytelling to create timeless art.</p>
+                    <p class="text-gray-400 leading-relaxed font-light text-lg mb-8">Based in New York, capturing love stories worldwide.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Stylized_signature_sample.svg" alt="Signature" class="h-16 invert opacity-80 pt-4">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-white dark:bg-[#0B1120] text-center px-4">
-        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white" data-aos="fade-up">Ready to create beautiful memories?</h2>
-        <a href="index.html#booking" class="inline-block px-10 py-4 bg-brand-gold text-brand-dark font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-brand-dark transition-colors duration-300 shadow-xl" data-aos="fade-up" data-aos-delay="100">
-            Check Our Availability
-        </a>
+    <section class="py-24 bg-black relative border-t border-white/5 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <p class="text-brand-gold tracking-[0.4em] uppercase text-xs mb-4 font-semibold">The Tools</p>
+                <h2 class="font-serif text-4xl font-bold text-white">What's In The Bag</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border border-white/10 hover:border-brand-gold/50 transition-colors bg-[#0a0a0a]" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-camera text-3xl text-brand-gold mb-6"></i>
+                    <h3 class="font-serif text-2xl text-white mb-4">Bodies</h3>
+                    <ul class="text-gray-400 font-light space-y-2">
+                        <li>Sony A7R V (Primary)</li>
+                        <li>Sony A7 IV (Secondary)</li>
+                        <li>Leica Q2 (Candid/Editorial)</li>
+                    </ul>
+                </div>
+                <div class="p-8 border border-white/10 hover:border-brand-gold/50 transition-colors bg-[#0a0a0a]" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-camera-retro text-3xl text-brand-gold mb-6"></i>
+                    <h3 class="font-serif text-2xl text-white mb-4">Glass</h3>
+                    <ul class="text-gray-400 font-light space-y-2">
+                        <li>Sony 35mm f/1.4 GM</li>
+                        <li>Sony 50mm f/1.2 GM</li>
+                        <li>Sony 85mm f/1.4 GM</li>
+                        <li>Sony 24-70mm f/2.8 GM II</li>
+                    </ul>
+                </div>
+                <div class="p-8 border border-white/10 hover:border-brand-gold/50 transition-colors bg-[#0a0a0a]" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fa-solid fa-lightbulb text-3xl text-brand-gold mb-6"></i>
+                    <h3 class="font-serif text-2xl text-white mb-4">Lighting</h3>
+                    <ul class="text-gray-400 font-light space-y-2">
+                        <li>Profoto B10X Plus</li>
+                        <li>Profoto A10 Flashes</li>
+                        <li>MagMod Modifiers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+    <footer class="bg-black text-white py-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">LUMINA.</h2>
+            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">VDS.</h2>
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-pinterest"></i></a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
             </div>
-            <p class="text-gray-500 text-sm font-light">© 2026 Lumina Studio. All rights reserved.</p>
+            <p class="text-gray-500 text-sm font-light">© 2026 VDS Photography. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 50, duration: 1000, easing: 'ease-out-cubic' });
+    </script>
 </body>
 </html>

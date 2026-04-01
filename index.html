@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina | Premium Photography Studio</title>
+    <title>VDS Photography | Premium Photography Studio</title>
     
+    <link rel="icon" type="image/png" href="logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -36,101 +34,85 @@
 </head>
 <body class="bg-brand-light text-gray-800 dark:bg-brand-dark dark:text-gray-200 transition-colors duration-300 font-sans antialiased overflow-x-hidden">
 
-    <div id="preloader" class="fixed inset-0 z-[999999] bg-brand-dark flex flex-col items-center justify-center transition-opacity duration-1000 w-full h-full m-0 p-0">
-        <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl text-white tracking-[0.2em] md:tracking-[0.3em] uppercase loader-text opacity-0 translate-y-4 transition-all duration-1000 ease-out text-center">LUMINA.</h1>
-        <div class="w-32 md:w-48 h-[2px] bg-gray-800 mt-6 relative overflow-hidden flex-shrink-0">
-            <div class="absolute top-0 left-0 h-full bg-brand-gold loader-bar w-0 transition-all duration-[1.5s] ease-in-out"></div>
+    <div id="preloader" class="fixed inset-0 z-[999999] bg-[#0F172A] flex flex-col items-center justify-center transition-opacity duration-1000 w-full h-full m-0 p-0">
+        <div class="relative flex flex-col items-center">
+            <img src="logo.png" alt="VDS Logo" class="h-24 md:h-32 w-auto animate-pulse rounded-full shadow-lg shadow-white/10">
+            <div class="mt-8 overflow-hidden h-[2px] w-48 bg-white/10 relative">
+                <div class="loader-bar absolute top-0 left-0 h-full bg-brand-gold w-0 transition-all duration-[1.5s] ease-in-out"></div>
+            </div>
         </div>
+        <p class="loader-text mt-6 text-xs md:text-sm tracking-[0.5em] uppercase text-gray-400 opacity-0 transition-all duration-700">VDS Photography</p>
     </div>
 
     <div class="custom-cursor hidden md:block"></div>
-<nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-white/40 dark:bg-[#0F172A]/50 backdrop-blur-xl border-b border-white/20 dark:border-gray-800/50 shadow-sm" id="navbar">
+
+    <nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-white/10 dark:bg-black/20 backdrop-blur-md border-b border-white/10" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 lg:grid-cols-[1fr_auto_1fr] items-center h-20 lg:h-24">
+            <div class="flex justify-between items-center h-20">
                 
-                <div class="hidden lg:flex justify-start space-x-8 items-center overflow-hidden">
-                    <a href="index.html" class="group relative text-xs font-semibold text-gray-900 dark:text-white uppercase tracking-widest whitespace-nowrap py-1">
-                        Home
-                        <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-100 transition-transform duration-300 origin-left"></span>
-                    </a>
-                    <a href="index.html#portfolio" class="group relative text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white uppercase tracking-widest whitespace-nowrap py-1">
-                        Quick Portfolio
-                        <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                    </a>
-                    <a href="films.html" class="group relative text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white uppercase tracking-widest whitespace-nowrap py-1">
-                        Films
-                        <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-4">
+                        <img src="logo.png" alt="VDS Logo" class="h-12 sm:h-14 w-auto rounded-full shadow-md">
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-widest text-gray-900 dark:text-white uppercase hidden sm:block">VDS.</span>
                     </a>
                 </div>
-                
-                <div class="lg:hidden"></div> 
 
-                <div class="flex justify-start lg:justify-center z-10 overflow-hidden text-center w-full px-4">
-                    <a href="index.html" class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white whitespace-nowrap drop-shadow-sm">LUMINA.</a>
-                </div>
-
-                <div class="flex justify-end items-center space-x-6 xl:space-x-8 overflow-hidden">
-                    <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
-                        <a href="about.html" class="group relative text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white uppercase tracking-widest whitespace-nowrap py-1">
-                            About
-                            <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                        </a>
-                        <a href="index.html#contact" class="group relative text-xs font-semibold text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white uppercase tracking-widest whitespace-nowrap py-1">
-                            Contact
-                            <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                        </a>
-                        
-                        <button id="theme-toggle" class="text-lg text-gray-800 dark:text-gray-200 hover:text-brand-gold transition-colors shrink-0 border-l border-gray-400 dark:border-gray-600 pl-6">
-                            <i class="fa-solid fa-moon dark:hidden"></i>
-                            <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
-                        </button>
-                        <a href="index.html#booking" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap shrink-0">Book Now</a>
-                    </div>
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <a href="#portfolio" class="text-xs font-bold text-gray-800 dark:text-white/80 hover:text-brand-gold uppercase tracking-[0.2em] transition-all">Quick Portfolio</a>
+                    <a href="films.html" class="text-xs font-bold text-gray-800 dark:text-white/80 hover:text-brand-gold uppercase tracking-[0.2em] transition-all">Films</a>
+                    <a href="about.html" class="text-xs font-bold text-gray-800 dark:text-white/80 hover:text-brand-gold uppercase tracking-[0.2em] transition-all">About</a>
                     
-                    <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none text-gray-900 dark:text-white p-2">
-                        <i class="fa-solid fa-bars"></i>
+                    <button id="theme-toggle" class="text-lg text-gray-800 dark:text-gray-200 hover:text-brand-gold transition-colors shrink-0 border-l border-gray-400 dark:border-gray-600 pl-6">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+
+                    <a href="#booking" class="px-6 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs font-bold uppercase tracking-widest">Book Now</a>
+                </div>
+
+                <div class="flex items-center gap-4 lg:hidden">
+                    <button id="mobile-theme-toggle" class="text-lg text-gray-800 dark:text-gray-200">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-gray-900 dark:text-white text-2xl p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars-staggered"></i>
                     </button>
                 </div>
-
             </div>
         </div>
-        
+
         <div id="mobile-menu" class="hidden lg:hidden bg-white/95 dark:bg-[#0F172A]/95 backdrop-blur-3xl border-t border-gray-200 dark:border-gray-800 absolute w-full shadow-2xl">
             <div class="px-4 pt-6 pb-8 space-y-6 flex flex-col text-center">
                 <a href="index.html" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">Home</a>
-                <a href="index.html#portfolio" class="block text-sm tracking-widest uppercase font-medium">Quick Portfolio</a>
-                <a href="films.html" class="block text-sm tracking-widest uppercase font-medium">Films</a>
-                <a href="about.html" class="block text-sm tracking-widest uppercase font-medium">About</a>
-                <a href="index.html#contact" class="block text-sm tracking-widest uppercase font-medium">Contact</a>
-                <a href="index.html#booking" class="block text-sm tracking-widest uppercase font-medium">Book Now</a>
-                <button id="mobile-theme-toggle" class="text-sm tracking-widest uppercase font-medium text-gray-500 hover:text-brand-gold mt-4">Toggle Dark Mode</button>
+                <a href="index.html#portfolio" class="block text-sm tracking-widest uppercase font-medium text-gray-800 dark:text-white">Quick Portfolio</a>
+                <a href="films.html" class="block text-sm tracking-widest uppercase font-medium text-gray-800 dark:text-white">Films</a>
+                <a href="about.html" class="block text-sm tracking-widest uppercase font-medium text-gray-800 dark:text-white">About</a>
+                <a href="index.html#contact" class="block text-sm tracking-widest uppercase font-medium text-gray-800 dark:text-white">Contact</a>
+                <a href="index.html#booking" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">Book Now</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative h-screen flex items-end justify-start overflow-hidden pb-20 md:pb-32 px-4 sm:px-10 lg:px-20">
+    <header class="relative h-screen flex items-end justify-start overflow-hidden pb-16 md:pb-24 px-6 sm:px-12 lg:px-24">
         <div class="absolute inset-0 z-0">
-            <img src="hero-bg.jpg" alt="Hero Background" class="w-full h-full object-cover object-[center_30%]" />
-            
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <img src="hero-bg.jpg" alt="VDS Photography Hero" class="w-full h-full object-cover object-[center_35%]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
         </div>
         
-        <div class="relative z-10 text-left max-w-3xl w-full" data-aos="fade-up" data-aos-duration="1000">
-            <p class="text-brand-gold tracking-[0.3em] uppercase text-xs md:text-sm mb-4 font-semibold drop-shadow-md">Capturing Timeless Moments</p>
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white font-bold mb-6 leading-tight drop-shadow-lg">Visual Poetry.</h1>
-            <p class="text-gray-200 font-light text-base md:text-lg mb-10 max-w-xl drop-shadow-md">Luxury wedding, editorial, and portrait photography based in New York. We craft stories through light, shadow, and raw emotion.</p>
+        <div class="relative z-10 text-left max-w-4xl" data-aos="fade-right" data-aos-duration="1200">
+            <h1 class="font-serif text-6xl md:text-8xl lg:text-[10rem] text-white font-bold leading-none mb-4 opacity-95">VDS.</h1>
+            <p class="text-brand-gold tracking-[0.4em] uppercase text-xs md:text-sm mb-8 font-semibold drop-shadow-md">Cinematic Wedding & Portrait Stories</p>
             
-            <div class="flex flex-col sm:flex-row justify-start gap-4">
-                <a href="#portfolio" class="px-8 py-4 bg-brand-gold text-brand-dark font-medium uppercase tracking-widest hover:bg-white transition-colors duration-300 shadow-lg text-center">View Portfolio</a>
-                <a href="#booking" class="px-8 py-4 border border-white bg-black/30 backdrop-blur-sm text-white font-medium uppercase tracking-widest hover:bg-white hover:text-brand-dark transition-colors duration-300 shadow-lg text-center">Book Session</a>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#portfolio" class="px-10 py-4 bg-white text-black text-center font-bold uppercase tracking-widest hover:bg-brand-gold transition-all text-sm shadow-xl">Portfolio</a>
+                <a href="#booking" class="px-10 py-4 border border-white/50 backdrop-blur-md text-white text-center font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all text-sm shadow-xl">Contact</a>
             </div>
         </div>
     </header>
 
     <div class="bg-brand-gold text-brand-dark py-4 overflow-hidden flex whitespace-nowrap w-full">
         <div class="marquee-track font-semibold text-sm tracking-[0.3em] uppercase flex flex-nowrap items-center w-max">
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
-            <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
             <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
             <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
             <span class="pr-4">Premium Studio • Worldwide Coverage • Award Winning •</span>
@@ -149,7 +131,7 @@
                 </div>
                 <div data-aos="fade-left">
                     <h4 class="text-brand-gold tracking-widest uppercase text-sm mb-2">The Artist</h4>
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Hello, I'm Elena.</h2>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">Hello, I'm VDS.</h2>
                     <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed font-light">With over 10 years of experience, my approach is rooted in fine art and editorial storytelling. I believe every frame should evoke a feeling, a memory, a fleeting moment frozen in time forever.</p>
                     <p class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed font-light">Whether it's the chaotic joy of a wedding day or the quiet intimacy of a portrait session, I am there to document your truth.</p>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Stylized_signature_sample.svg" alt="Signature" class="h-12 dark:invert opacity-70">
@@ -172,8 +154,7 @@
             </div>
 
             <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6" id="gallery-grid">
-                
-            </div>
+                </div>
         </div>
     </section>
 
@@ -238,7 +219,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-brand-light dark:bg-brand-dark">
+    <section id="contact" class="py-24 bg-brand-light dark:bg-brand-dark">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
                 <h2 class="font-serif text-4xl font-bold mb-6 text-gray-900 dark:text-white">Get in Touch</h2>
@@ -246,7 +227,7 @@
                 
                 <div class="space-y-4 mb-8">
                     <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-location-dot w-8 text-brand-gold"></i> 123 Gallery Row, New York, NY 10012</p>
-                    <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-envelope w-8 text-brand-gold"></i> hello@luminastudio.com</p>
+                    <p class="flex items-center text-gray-600 dark:text-gray-400"><i class="fa-solid fa-envelope w-8 text-brand-gold"></i> hello@vdsphotography.com</p>
                 </div>
 
                 <a href="https://wa.me/1234567890" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#25D366] text-white font-medium rounded-sm hover:bg-[#1DA851] transition-colors shadow-lg">
@@ -255,20 +236,20 @@
             </div>
             
             <div class="h-96 rounded-lg overflow-hidden shadow-xl filter grayscale hover:grayscale-0 transition-all duration-500" data-aos="fade-left">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.518174526978!2d-74.00282478459458!3d40.72859187932971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598f828a1c93%3A0xc3b5168e7b3ebec0!2sSoHo%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1689280000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://maps.google.com/maps?q=New+York&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
 
     <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">LUMINA.</h2>
+            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">VDS Photography.</h2>
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
                 <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-pinterest"></i></a>
                 <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
             </div>
-            <p class="text-gray-500 text-sm font-light">© 2026 Lumina Studio. All rights reserved.</p>
+            <p class="text-gray-500 text-sm font-light">© 2026 VDS Photography. All rights reserved.</p>
         </div>
     </footer>
 
@@ -277,12 +258,11 @@
         <img id="lightbox-img" src="" alt="Fullscreen Image" class="max-w-[90vw] max-h-[90vh] object-contain shadow-2xl">
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script src="script.js"></script>
-</body>
 </body>
 </html>

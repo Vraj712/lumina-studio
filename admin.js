@@ -19,7 +19,7 @@ const db = firebase.firestore();
 // 2. YOUR CLOUDINARY CONFIGURATION
 // ==========================================
 const myCloudName = "dqe5kg8pl"; 
-const myUploadPreset = "lumina_preset"; 
+const myUploadPreset = "VDS PHOTOGRAPHYa_preset"; 
 
 // ==========================================
 // 3. UI Elements & Login Logic

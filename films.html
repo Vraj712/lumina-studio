@@ -3,129 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Films | Lumina Studio</title>
+    <title>Films | VDS Photography</title>
+    <link rel="icon" type="image/png" href="logo.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Poppins"', 'sans-serif'] },
-                    colors: { brand: { gold: '#D4AF37', dark: '#0F172A', light: '#F8FAFC' } }
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Poppins"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { gold: '#D4AF37', dark: '#0F172A', light: '#F8FAFC' }
+                    }
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-brand-light text-gray-800 dark:bg-brand-dark dark:text-gray-200 transition-colors duration-300 font-sans antialiased overflow-x-hidden pt-20 lg:pt-24">
+<body class="bg-[#0B1120] text-gray-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
 
-    <div class="custom-cursor hidden md:block"></div>
-
-    <nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-white/90 dark:bg-[#0B1120]/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800" id="navbar">
+    <nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-black/40 backdrop-blur-md border-b border-white/10" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-3 items-center h-20 lg:h-24">
-                <div class="hidden lg:flex justify-start space-x-8 items-center overflow-hidden">
-                    <a href="index.html" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Home</a>
-                    <a href="index.html#portfolio" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Quick Portfolio</a>
-                    <a href="films.html" class="text-xs font-semibold text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap border-b border-brand-gold pb-1">Films</a>
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    
+                    <a href="index.html" class="mr-4 sm:mr-6 text-white/70 hover:text-brand-gold transition-all text-lg sm:text-xl hover:-translate-x-1">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                    </a>
+
+                    <a href="index.html" class="flex items-center gap-4">
+                        <img src="logo.png" alt="VDS Logo" class="h-12 sm:h-14 w-auto rounded-full shadow-md">
+                        <span class="font-serif text-xl sm:text-2xl font-bold tracking-widest text-white uppercase hidden sm:block">VDS.</span>
+                    </a>
                 </div>
-                <div class="lg:hidden"></div>
-                <div class="flex justify-center z-10 overflow-hidden text-center w-full">
-                    <a href="index.html" class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-widest uppercase text-gray-900 dark:text-white whitespace-nowrap">LUMINA.</a>
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <a href="index.html#portfolio" class="text-xs font-bold text-white/80 hover:text-brand-gold uppercase tracking-[0.2em] transition-all">Quick Portfolio</a>
+                    <a href="films.html" class="text-xs font-bold text-brand-gold uppercase tracking-[0.2em] transition-all">Films</a>
+                    <a href="about.html" class="text-xs font-bold text-white/80 hover:text-brand-gold uppercase tracking-[0.2em] transition-all">About</a>
+                    <a href="index.html#booking" class="px-6 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-black transition-all rounded-sm text-xs font-bold uppercase tracking-widest">Book Now</a>
                 </div>
-                <div class="flex justify-end items-center space-x-6 xl:space-x-8 overflow-hidden">
-                    <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
-                        <a href="about.html" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">About</a>
-                        <a href="index.html#contact" class="text-xs font-semibold hover:text-brand-gold transition-colors uppercase tracking-widest whitespace-nowrap">Contact</a>
-                        <button id="theme-toggle" class="text-lg hover:text-brand-gold transition-colors shrink-0 border-l border-gray-300 dark:border-gray-700 pl-6">
-                            <i class="fa-solid fa-moon dark:hidden"></i>
-                            <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
-                        </button>
-                        <a href="index.html#booking" class="px-5 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-dark transition-all rounded-sm text-xs uppercase tracking-[0.2em] whitespace-nowrap shrink-0">Book Now</a>
-                    </div>
-                    <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none text-gray-900 dark:text-white p-2">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-[#0B1120] border-t border-gray-200 dark:border-gray-800 absolute w-full shadow-2xl">
-            <div class="px-4 pt-6 pb-8 space-y-6 flex flex-col text-center">
-                <a href="index.html" class="block text-sm tracking-widest uppercase font-medium">Home</a>
-                <a href="films.html" class="block text-sm tracking-widest uppercase font-medium text-brand-gold">Films</a>
-                <a href="about.html" class="block text-sm tracking-widest uppercase font-medium">About</a>
-                <a href="index.html#booking" class="block text-sm tracking-widest uppercase font-medium">Book Now</a>
             </div>
         </div>
     </nav>
 
-    <header class="py-24 text-center px-4 max-w-4xl mx-auto">
-        <h4 class="text-brand-gold tracking-[0.3em] uppercase text-xs font-semibold mb-6" data-aos="fade-up">Cinematography</h4>
-        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 dark:text-white leading-tight" data-aos="fade-up" data-aos-delay="100">Motion & Emotion.</h1>
-        <p class="text-gray-600 dark:text-gray-400 font-light text-lg md:text-xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-            Experience the magic of your special day through our cinematic films. Every frame is carefully crafted to tell your unique love story with breathtaking visuals and immersive sound design.
-        </p>
+    <header class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10" style="background-image: radial-gradient(circle at center, #D4AF37 0%, transparent 70%);"></div>
+        <div class="relative z-10" data-aos="fade-up">
+            <p class="text-brand-gold tracking-[0.4em] uppercase text-sm mb-4 font-semibold">Motion Pictures</p>
+            <h1 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6">Cinematic Films.</h1>
+            <p class="text-gray-400 font-light text-lg max-w-2xl mx-auto">Moving stories crafted with precision. Best viewed with sound on and lights off.</p>
+        </div>
     </header>
 
-    <section class="py-12 bg-brand-light dark:bg-brand-dark px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <div class="group relative overflow-hidden rounded-sm cursor-pointer shadow-xl" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Film 1" class="w-full h-[350px] md:h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-1000">
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500 flex flex-col items-center justify-center">
-                    <i class="fa-solid fa-play text-white text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300 opacity-80 group-hover:opacity-100 group-hover:text-brand-gold"></i>
-                    <h3 class="text-white font-serif text-2xl tracking-widest uppercase">Sarah & James</h3>
-                    <p class="text-gray-300 text-xs tracking-[0.2em] uppercase mt-2">Tuscany, Italy</p>
+    <section class="py-12 pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-video w-full rounded-sm overflow-hidden shadow-2xl relative bg-black border border-white/5 group-hover:border-brand-gold/50 transition-colors duration-500">
+                        <iframe src="https://player.vimeo.com/video/368810239?color=D4AF37&title=0&byline=0&portrait=0" class="absolute top-0 left-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <div>
+                            <h3 class="text-white font-serif text-3xl mb-2 group-hover:text-brand-gold transition-colors">Aria & James</h3>
+                            <p class="text-gray-400 font-light text-sm">A timeless celebration in the heart of Tuscany.</p>
+                        </div>
+                        <span class="text-brand-gold text-xs tracking-widest uppercase border border-brand-gold/30 px-3 py-1 rounded-full">Wedding</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="group relative overflow-hidden rounded-sm cursor-pointer shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Film 2" class="w-full h-[350px] md:h-[400px] object-cover transform group-hover:scale-105 transition-transform duration-1000">
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500 flex flex-col items-center justify-center">
-                    <i class="fa-solid fa-play text-white text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300 opacity-80 group-hover:opacity-100 group-hover:text-brand-gold"></i>
-                    <h3 class="text-white font-serif text-2xl tracking-widest uppercase">Elena & Michael</h3>
-                    <p class="text-gray-300 text-xs tracking-[0.2em] uppercase mt-2">New York City</p>
+                <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-video w-full rounded-sm overflow-hidden shadow-2xl relative bg-black border border-white/5 group-hover:border-brand-gold/50 transition-colors duration-500">
+                        <iframe src="https://player.vimeo.com/video/450868117?color=D4AF37&title=0&byline=0&portrait=0" class="absolute top-0 left-0 w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="mt-6 flex justify-between items-start">
+                        <div>
+                            <h3 class="text-white font-serif text-3xl mb-2 group-hover:text-brand-gold transition-colors">Vogue Editorial</h3>
+                            <p class="text-gray-400 font-light text-sm">Behind the scenes of our latest fashion campaign.</p>
+                        </div>
+                        <span class="text-brand-gold text-xs tracking-widest uppercase border border-brand-gold/30 px-3 py-1 rounded-full">Editorial</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="md:col-span-2 group relative overflow-hidden rounded-sm cursor-pointer shadow-2xl mt-4" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Film 3" class="w-full h-[400px] md:h-[600px] object-cover transform group-hover:scale-105 transition-transform duration-1000">
-                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500 flex flex-col items-center justify-center">
-                    <i class="fa-solid fa-play text-white text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300 opacity-80 group-hover:opacity-100 group-hover:text-brand-gold"></i>
-                    <h3 class="text-white font-serif text-3xl md:text-5xl tracking-widest uppercase">The Editorial Cut</h3>
-                    <p class="text-gray-300 text-sm tracking-[0.3em] uppercase mt-4">Vogue Style Wedding Film</p>
-                </div>
             </div>
-
         </div>
     </section>
 
-    <section class="py-24 bg-white dark:bg-[#0B1120] text-center px-4">
-        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-white" data-aos="fade-up">Want us to capture your story?</h2>
-        <a href="index.html#booking" class="inline-block px-10 py-4 bg-brand-gold text-brand-dark font-bold uppercase tracking-widest hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-brand-dark transition-colors duration-300 shadow-xl" data-aos="fade-up" data-aos-delay="100">
-            Book A Consultation
-        </a>
-    </section>
-
-    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+    <footer class="bg-black text-white py-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">LUMINA.</h2>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-pinterest"></i></a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-tiktok"></i></a>
-            </div>
-            <p class="text-gray-500 text-sm font-light">© 2026 Lumina Studio. All rights reserved.</p>
+            <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">VDS.</h2>
+            <p class="text-gray-500 text-sm font-light">© 2026 VDS Photography. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 50, duration: 1000, easing: 'ease-out-cubic' });
+    </script>
 </body>
 </html>
