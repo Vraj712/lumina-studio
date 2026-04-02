@@ -28,22 +28,22 @@
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#0B1120] text-gray-200 font-sans antialiased selection:bg-brand-gold selection:text-black">
+<body class="bg-[#0B1120] text-gray-200 font-sans antialiased selection:bg-brand-gold selection:text-black overflow-x-hidden">
 
     <nav class="fixed w-full z-[100] top-0 transition-all duration-300 bg-black/40 backdrop-blur-md border-b border-white/10" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
+                
                 <div class="flex-shrink-0 flex items-center">
-                    
                     <a href="index.html" class="mr-4 sm:mr-6 text-white/70 hover:text-brand-gold transition-all text-lg sm:text-xl hover:-translate-x-1">
                         <i class="fa-solid fa-arrow-left-long"></i>
                     </a>
-
                     <a href="index.html" class="flex items-center gap-4">
                         <img src="logo.png" alt="VDS Logo" class="h-12 sm:h-14 w-auto rounded-full shadow-md">
                         <span class="font-serif text-xl sm:text-2xl font-bold tracking-widest text-white uppercase hidden sm:block">VDS.</span>
                     </a>
                 </div>
+
                 <div class="hidden lg:flex space-x-8 items-center">
                     <a href="index.html#portfolio" class="text-xs font-bold text-white/80 hover:text-brand-gold uppercase tracking-[0.2em] transition-all">Quick Portfolio</a>
                     <a href="films.html" class="text-xs font-bold text-white/80 hover:text-brand-gold uppercase tracking-[0.2em] transition-all">Films</a>
@@ -55,7 +55,7 @@
     </nav>
 
     <header class="pt-40 pb-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
-        <div class="relative z-10" data-aos="fade-up">
+        <div class="relative z-10" data-aos="fade-down" data-aos-duration="1000">
             <p class="text-brand-gold tracking-[0.4em] uppercase text-sm mb-4 font-semibold">Behind The Lens</p>
             <h1 class="font-serif text-5xl md:text-7xl text-white font-bold mb-6">The Visionary.</h1>
         </div>
@@ -64,16 +64,28 @@
     <section class="py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="relative" data-aos="fade-right">
+                
+                <div class="relative" data-aos="fade-right" data-aos-duration="1200">
                     <div class="absolute -inset-4 bg-gradient-to-tr from-brand-gold/20 to-transparent backdrop-blur-sm -z-10 rounded-sm transform -translate-x-4 -translate-y-4"></div>
                     <img src="https://images.unsplash.com/photo-1554046920-90dcac824b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="VDS Photographer" class="w-full h-[700px] object-cover shadow-2xl rounded-sm filter grayscale hover:grayscale-0 transition-all duration-700">
                 </div>
-                <div data-aos="fade-left" class="space-y-6">
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-white">Documenting Life's Truest Moments.</h2>
-                    <p class="text-gray-400 leading-relaxed font-light text-lg">My journey with a camera began over a decade ago. What started as a fascination with light and shadow quickly evolved into a lifelong obsession with human connection.</p>
-                    <p class="text-gray-400 leading-relaxed font-light text-lg">At VDS Photography, my philosophy is simple: I don't just want to show you what your day looked like. I want to show you exactly how it felt. I blend editorial fashion techniques with raw, photojournalistic storytelling to create timeless art.</p>
-                    <p class="text-gray-400 leading-relaxed font-light text-lg mb-8">Based in New York, capturing love stories worldwide.</p>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Stylized_signature_sample.svg" alt="Signature" class="h-16 invert opacity-80 pt-4">
+
+                <div class="space-y-6">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-white" data-aos="fade-left" data-aos-delay="100">Documenting Life's Truest Moments.</h2>
+                    
+                    <p class="text-gray-400 leading-relaxed font-light text-lg" data-aos="fade-left" data-aos-delay="200">
+                        My journey with a camera didn't start in a studio; it started with a desire to freeze time. I believe that photography is more than just hitting a shutter button—it is the art of preserving a legacy.
+                    </p>
+                    
+                    <p class="text-gray-400 leading-relaxed font-light text-lg" data-aos="fade-left" data-aos-delay="300">
+                        At VDS Photography, my approach blends high-end editorial fashion with raw, photojournalistic storytelling. I won't force you into stiff, uncomfortable poses. Instead, I create an environment where you can be your truest self, allowing me to capture the quiet glances and loud laughter exactly as they happen.
+                    </p>
+                    
+                    <p class="text-gray-400 leading-relaxed font-light text-lg mb-8" data-aos="fade-left" data-aos-delay="400">
+                        When I don't have a camera in my hand, you can usually find me hunting for the best coffee in the city or planning my next travel adventure. Based worldwide, shooting wherever your story takes us.
+                    </p>
+                    
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Stylized_signature_sample.svg" alt="Signature" class="h-16 invert opacity-80 pt-4" data-aos="fade-up" data-aos-delay="500">
                 </div>
             </div>
         </div>
@@ -83,7 +95,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
                 <p class="text-brand-gold tracking-[0.4em] uppercase text-xs mb-4 font-semibold">The Tools</p>
-                <h2 class="font-serif text-4xl font-bold text-white">What's In The Bag</h2>
+                <h2 class="font-serif text-4xl font-bold text-white">What's In My Bag</h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -93,7 +105,7 @@
                     <ul class="text-gray-400 font-light space-y-2">
                         <li>Sony A7R V (Primary)</li>
                         <li>Sony A7 IV (Secondary)</li>
-                        <li>Leica Q2 (Candid/Editorial)</li>
+                        <li>DJI Mavic 3 Pro (Aerial)</li>
                     </ul>
                 </div>
                 <div class="p-8 border border-white/10 hover:border-brand-gold/50 transition-colors bg-[#0a0a0a]" data-aos="fade-up" data-aos-delay="200">
@@ -122,10 +134,6 @@
     <footer class="bg-black text-white py-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="font-serif text-2xl font-bold tracking-widest uppercase mb-6 text-white">VDS.</h2>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors text-xl"><i class="fa-brands fa-pinterest"></i></a>
-            </div>
             <p class="text-gray-500 text-sm font-light">© 2026 VDS Photography. All rights reserved.</p>
         </div>
     </footer>
